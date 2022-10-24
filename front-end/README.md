@@ -13,3 +13,6 @@ Gerenciar rotas
 Realizar chamadas API
 ### npm install --save axios
 
+instalar History
+### npm install --save history
+

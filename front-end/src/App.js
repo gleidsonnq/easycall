@@ -1,19 +1,20 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import {Login} from './pages/Login';
-import {Dashboard} from './pages/Dashboard';
+import React from "react";
+import {BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes/routespage';
+import history from './services/history';
+import {AuthProvider} from './Context/AuthContext'
 
 function App() {
-  return (
-    <div>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Login/>}/>
-          <Route path="/home" element={<Dashboard/>}/>
-        </Routes>
-      </Router>  
-    </div>
-  );
-}
 
+return(
+<div>
+<AuthProvider>
+<Router history={history}>
+<Routes/>
+</Router>
+</AuthProvider>
+</div>
+)
+
+}
 export default App;

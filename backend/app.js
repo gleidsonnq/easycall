@@ -127,12 +127,12 @@ app.delete("/user/:id", eAdmin, async (req, res) => {
 
 app.post('/login', async (req, res) => {
 
-    await sleep(3000);
+    /*await sleep(3000);
     function sleep(ms){
         return new Promise((resolve) => {
             setTimeout(resolve,ms);
         });
-    };
+    };*/
     const user = await Usuario.findOne({
         attributes: ['id', 'name', 'email', 'password'],
         where: {email: req.body.email}});
