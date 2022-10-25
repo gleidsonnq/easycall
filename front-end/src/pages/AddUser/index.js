@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import api from '../../config/configApi'
 
 export const AddUser = () => {
@@ -45,6 +45,10 @@ export const AddUser = () => {
         });
     }
 
+    const mensagemAdd={
+        type: status.type,
+        mensagem: status.mensagem
+    }
     return(
         <div>
             <Link to="/home">Home</Link><br />
@@ -52,7 +56,7 @@ export const AddUser = () => {
             <Link to="/add-user">Cadastrar Usuário</Link><br />
             <h1>Cadastrar Usuário</h1>
             {status.type === 'error'? <p>{status.mensagem}</p> : ""}
-            {status.type === 'success'? <p>{status.mensagem}</p> : ""}
+            {status.type === 'success'?<Navigate to="/users" state={mensagemAdd}/>: ""}
             <form onSubmit={addUser}>
                 <label>Nome: </label>
                 <input type="text" name="name" placeholder="Nome completo" onChange={valueInput}/> <br /><br />

@@ -74,7 +74,7 @@ export const Login = () =>{
                 <label>Usuário: </label>
                 <input type="text" name="email" placeholder="Digite o email" onChange={valorInput} /><br /><br />
                 
-                <label>Usuário: </label>
+                <label>Senha: </label>
                 <input type="password" name="password" placeholder="Digite a senha" autoComplete="on" onChange={valorInput} /><br /><br />
 
                 {status.loading ? <button type="submit" disabled>Acessando...</button> : <button type="submit">Acessar</button>}
